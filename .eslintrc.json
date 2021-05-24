@@ -1,0 +1,55 @@
+{
+  "plugins": ["import", "react"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react/recommended"
+  ],
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/default": 0,
+    "import/imports-first": 1,
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["internal", "external"]
+      }
+    ],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "\\.(png|jpg|svg)\\?(sprite)$"
+        ]
+      }
+    ],
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  }
+}
